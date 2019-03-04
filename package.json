@@ -1,0 +1,22 @@
+{
+  "name": "advanced-css",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compileSass": "node-sass project1/sass/main.scss project1/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexnl13/advanced-css.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexnl13/advanced-css/issues"
+  },
+  "homepage": "https://github.com/alexnl13/advanced-css#readme",
+  "devDependencies": {
+    "node-sass": "^4.11.0"
+  }
+}
