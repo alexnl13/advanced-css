@@ -36,7 +36,16 @@
     }
   }
 
-  &::after {
+  &--green {
+    background-color: $color-primary;
+    color: white;
+
+    &:after {
+      background-color: $color-primary;
+    }
+  }
+
+&::after {
     content: "";
     display: inline-block;
     height: 100%;
