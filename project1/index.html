@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
@@ -8,6 +8,26 @@
     <title>Title</title>
 </head>
 <body>
+
+    <div class="navigation">
+        <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+
+        <label for="navi-toggle" class="navigation__button">
+            <span class="navigation__icon">&nbsp;</span>
+        </label>
+
+        <div class="navigation__background">&nbsp;</div>
+
+        <nav class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item"><a href="#" class="navigation__link">Pealeht</a></li>
+                <li class="navigation__item"><a href="#" class="navigation__link">Teenused</a></li>
+                <li class="navigation__item"><a href="#" class="navigation__link">Meie tööd</a></li>
+                <li class="navigation__item"><a href="#" class="navigation__link">Kontakt</a></li>
+            </ul>
+        </nav>
+    </div>
+
     <header class="header">
         <div class="header__logo-box">
             <img src="./img/company_logo.png" alt="logo" class="header__logo">
@@ -90,7 +110,7 @@
             </div>
         </section>
 
-        <section class="section-packages">
+        <section class="section-packages" id="section-packages">
             <div class="u-center-text u-margin-bottom-big">
                 <h2 class="heading-secondary">
                     Populaarsed tooted
@@ -123,7 +143,7 @@
                                     <p class="card__price-text">Ainult</p>
                                     <p class="card__price-value">&euro;7-290</p>
                                 </div>
-                                <a href="#" class="btn btn--white">Osta</a>
+                                <a href="#popup" class="btn btn--white">Osta</a>
                             </div>
                         </div>
                     </div>
@@ -152,7 +172,7 @@
                                     <p class="card__price-text">Ainult</p>
                                     <p class="card__price-value">&euro;39,50</p>
                                 </div>
-                                <a href="#" class="btn btn--white">Osta</a>
+                                <a href="#popup" class="btn btn--white">Osta</a>
                             </div>
                         </div>
                     </div>
@@ -182,7 +202,7 @@
                                     <p class="card__price-text">Ainult</p>
                                     <p class="card__price-value">&euro;4.5-7.5</p>
                                 </div>
-                                <a href="#" class="btn btn--white">Osta</a>
+                                <a href="#popup" class="btn btn--white">Osta</a>
                             </div>
                         </div>
                     </div>
@@ -332,6 +352,24 @@
                 </div>
             </div>
         </footer>
+
+        <div class="popup" id="popup">
+            <div class="popup__content">
+                <div class="popup__left">
+                    <img src="./img/thuja_brabant.jpg" alt="thuja brabant" class="popup__img">
+                    <img src="./img/thuja_occidentalis_smaragd.jpg" alt="thuja brabant" class="popup__img">
+                </div>
+                <div class="popup__right">
+                    <a href="#section-packages" class="popup__close">&times;</a>
+                    <h2 class="heading-secondary u-margin-bottom-small">Elupuud</h2>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Elupuu “Brabant” kirjeldus</h3>
+                    <p class="popup__text">Kooniline elupuu sort. Eristub kiire kasvu poolest. Kasvab kuni 5 m kõrguseks ja kuni 3 m laiuseks. Aasta keskmine juurdekasv on 40 cm kõrgusesse ja läbimõõt suureneb 15 cm.
+                        Külmakindel, varju taluv liik. Võib kasvada peaaegu igasugusel pinnasel, kuid eelistatavalt saviliiv- ja lubjakivi pinnasel. Meeldivad vähese varjuga päikselised kohad.
+                    </p>
+                    <a href="#section-packages" class="btn btn--green">OSTA</a>
+                </div>
+            </div>
+        </div>
     </main>
     <!--
     <section class="grid-test">
