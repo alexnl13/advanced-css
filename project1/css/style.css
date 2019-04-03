@@ -1,3 +1,12 @@
+/*
+$breakpoint arguments:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+*/
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -5,9 +14,19 @@
 
 html {
   font-size: 62.5%; }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 900px) {
+    html {
+      font-size: 50%; } }
 
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  padding: 3rem; }
+  @media only screen and (max-width: 75em) {
+    body {
+      padding: 0; } }
 
 @keyframes moveFromLeft {
   0% {
@@ -41,8 +60,7 @@ body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   line-height: 1.7;
-  color: #777777;
-  padding: 3rem; }
+  color: #777777; }
 
 .heading-primary {
   color: white;
@@ -56,6 +74,10 @@ body {
     animation-name: moveFromLeft;
     animation-duration: 1s;
     animation-timing-function: ease-out; }
+    @media only screen and (max-width: 600px) {
+      .heading-primary--main {
+        letter-spacing: .8rem;
+        font-size: 3.5rem; } }
   .heading-primary--sub {
     display: block;
     font-size: 2rem;
@@ -63,6 +85,9 @@ body {
     animation-name: moveFromRight;
     animation-duration: 1s;
     animation-timing-function: ease-out; }
+    @media only screen and (max-width: 600px) {
+      .heading-primary--sub {
+        letter-spacing: .5rem; } }
 
 .heading-secondary {
   font-size: 3.5rem;
@@ -74,6 +99,12 @@ body {
   -webkit-background-clip: text;
   color: transparent;
   transition: all .2s; }
+  @media only screen and (max-width: 900px) {
+    .heading-secondary {
+      font-size: 3rem; } }
+  @media only screen and (max-width: 600px) {
+    .heading-secondary {
+      font-size: 2.5rem; } }
   .heading-secondary:hover {
     transform: skewX(-10deg) scale(1.1);
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
@@ -93,12 +124,18 @@ body {
 
 .u-margin-bottom-big {
   margin-bottom: 8rem !important; }
+  @media only screen and (max-width: 900px) {
+    .u-margin-bottom-big {
+      margin-bottom: 5rem !important; } }
 
 .u-margin-bottom-small {
   margin-bottom: 1.3rem !important; }
 
 .u-margin-bottom-medium {
   margin-bottom: 4rem !important; }
+  @media only screen and (max-width: 900px) {
+    .u-margin-bottom-medium {
+      margin-bottom: 3rem !important; } }
 
 .u-margin-top {
   margin-bottom: 8rem !important; }
@@ -107,6 +144,9 @@ body {
   background-color: #f7f7f7;
   padding: 25rem 0;
   margin-top: -15vh; }
+  @media only screen and (max-width: 900px) {
+    .section-about {
+      padding: 20rem 0; } }
 
 .section-features {
   padding: 20rem 0;
@@ -115,15 +155,24 @@ body {
   margin-top: -9rem; }
   .section-features > * {
     transform: skewY(5deg); }
+  @media only screen and (max-width: 900px) {
+    .section-features {
+      padding: 10rem 0; } }
 
 .section-packages {
   background-color: #f7f7f7;
   padding: 25rem 0 10rem 0;
   margin-top: -9rem; }
+  @media only screen and (max-width: 900px) {
+    .section-packages {
+      padding: 20rem 0 5rem 0; } }
 
 .section-stories {
   padding: 15rem 0;
   position: relative; }
+  @media only screen and (max-width: 900px) {
+    .section-stories {
+      padding: 10rem 0; } }
 
 .section-contact {
   background-image: linear-gradient(to right bottom, #22bd36, #2d6902);
@@ -133,11 +182,22 @@ body {
   background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 50%, transparent 50%), url(../img/alexhaljastus_car.jpg);
   background-size: cover;
   border-radius: 3px;
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
-  height: 50rem; }
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2); }
+  @media only screen and (max-width: 75em) {
+    .contact {
+      background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 65%, transparent 65%), url(../img/alexhaljastus_car.jpg); } }
+  @media only screen and (max-width: 900px) {
+    .contact {
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%), url(../img/alexhaljastus_car.jpg); } }
   .contact__form {
     width: 50%;
     padding: 6rem; }
+    @media only screen and (max-width: 75em) {
+      .contact__form {
+        width: 65%; } }
+    @media only screen and (max-width: 900px) {
+      .contact__form {
+        width: 100%; } }
 
 .btn, .btn:link, .btn:visited {
   text-transform: uppercase;
@@ -220,15 +280,34 @@ body {
     z-index: 10;
     transition: all .2s;
     outline-offset: 1.5rem; }
+    @media only screen and (max-width: 900px) {
+      .composition__photo {
+        float: left;
+        position: relative;
+        width: 33.333333%;
+        box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2); } }
     .composition__photo--p1 {
       left: 0;
       top: -2rem; }
+      @media only screen and (max-width: 900px) {
+        .composition__photo--p1 {
+          top: 0;
+          transform: scale(1.2); } }
     .composition__photo--p2 {
       right: 0;
       top: 2rem; }
+      @media only screen and (max-width: 900px) {
+        .composition__photo--p2 {
+          top: -1rem;
+          transform: scale(1.3);
+          z-index: 100; } }
     .composition__photo--p3 {
       left: 20%;
       top: 10rem; }
+      @media only screen and (max-width: 900px) {
+        .composition__photo--p3 {
+          top: 1rem;
+          left: 0; } }
     .composition__photo:hover {
       outline: 1.2rem solid #4cb259;
       transform: scale(1.3) translateY(-0.5rem);
@@ -245,6 +324,9 @@ body {
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   transition: transform 0.3s; }
+  @media only screen and (max-width: 900px) {
+    .feature-box {
+      padding: 2rem; } }
   .feature-box__icon {
     font-size: 6rem;
     display: inline-block;
@@ -345,6 +427,37 @@ body {
   .card__price-value {
     font-size: 5rem;
     font-weight: 100; }
+  @media only screen and (max-width: 900px) {
+    .card {
+      height: auto;
+      border-radius: 3px;
+      background-color: white;
+      box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+      .card__side {
+        height: auto;
+        position: relative;
+        box-shadow: none; }
+        .card__side--back {
+          transform: rotateY(0);
+          clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%); }
+      .card:hover .card__side--front {
+        transform: rotateY(0); }
+      .card__details {
+        padding: 0 3rem; }
+      .card__cta {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translate(0);
+        width: 100%;
+        padding: 7rem 4rem 4rem 4rem; }
+      .card__price-box {
+        color: white;
+        text-align: center;
+        margin-bottom: 2rem; }
+      .card__price-value {
+        font-size: 5rem;
+        font-weight: 100; } }
 
 .story {
   width: 75%;
@@ -356,6 +469,14 @@ body {
   padding-left: 9rem;
   font-size: 1.6rem;
   transform: skewX(-12deg); }
+  @media only screen and (max-width: 900px) {
+    .story {
+      width: 100%;
+      padding: 4rem;
+      padding-left: 7rem; } }
+  @media only screen and (max-width: 600px) {
+    .story {
+      transform: skewX(0); } }
   .story__shape {
     width: 15rem;
     height: 15rem;
@@ -365,6 +486,9 @@ body {
     clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg);
     position: relative; }
+    @media only screen and (max-width: 600px) {
+      .story__shape {
+        transform: translateX(-3rem) skewX(0); } }
   .story__img {
     height: 100%;
     transform: translateX(-4rem) scale(1.4);
@@ -372,6 +496,9 @@ body {
     transition: all .5s; }
   .story__text {
     transform: skewX(12deg); }
+    @media only screen and (max-width: 600px) {
+      .story__text {
+        transform: skewX(0); } }
   .story__caption {
     position: absolute;
     top: 50%;
@@ -418,6 +545,9 @@ body {
   width: 90%;
   display: block;
   transition: all .3s; }
+  @media only screen and (max-width: 900px) {
+    .form__input {
+      width: 100%; } }
   .form__input:focus {
     outline: none;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
@@ -441,6 +571,10 @@ body {
 .form__radio-group {
   width: 40%;
   display: inline-block; }
+  @media only screen and (max-width: 900px) {
+    .form__radio-group {
+      width: 100%;
+      margin-bottom: 2rem; } }
 
 .form__radio-input {
   display: none; }
@@ -502,17 +636,37 @@ body {
     opacity: 0;
     transform: translate(-50%, -50%) scale(0);
     transition: all .5s .2s; }
+    @media only screen and (max-width: 900px) {
+      .popup__content {
+        display: block; } }
   .popup__left {
     width: 33%;
     display: table-cell; }
+    @media only screen and (max-width: 900px) {
+      .popup__left {
+        display: block;
+        height: 50%;
+        width: 100%;
+        margin: 0 auto; } }
   .popup__right {
     width: 67%;
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem; }
+    @media only screen and (max-width: 900px) {
+      .popup__right {
+        display: block;
+        text-align: center;
+        width: 100%;
+        height: 50%; } }
   .popup__img {
     display: block;
     width: 100%; }
+    @media only screen and (max-width: 900px) {
+      .popup__img {
+        display: inline;
+        float: left;
+        width: 50%; } }
   .popup__text {
     font-size: 1.4rem;
     margin-bottom: 4rem;
@@ -526,6 +680,10 @@ body {
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto; }
+    @media only screen and (max-width: 900px) {
+      .popup__text {
+        -moz-column-count: 1;
+        column-count: 1; } }
   .popup:target {
     visibility: visible;
     opacity: 1;
@@ -560,6 +718,14 @@ body {
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
   text-align: center;
   cursor: pointer; }
+  @media only screen and (max-width: 900px) {
+    .navigation__button {
+      top: 4rem;
+      right: 4rem; } }
+  @media only screen and (max-width: 600px) {
+    .navigation__button {
+      top: 3rem;
+      right: 3rem; } }
 
 .navigation__background {
   height: 6rem;
@@ -571,6 +737,14 @@ body {
   background-image: radial-gradient(#22bd36, #2d6902);
   z-index: 1000;
   transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1); }
+  @media only screen and (max-width: 900px) {
+    .navigation__background {
+      top: 4.5rem;
+      right: 4.5rem; } }
+  @media only screen and (max-width: 600px) {
+    .navigation__background {
+      top: 3.5rem;
+      right: 3.5rem; } }
 
 .navigation__nav {
   width: 0;
@@ -659,8 +833,14 @@ body {
   background-image: linear-gradient(to right bottom, rgba(34, 189, 54, 0.6), rgba(45, 105, 2, 0.7)), url(../img/landscaping_header.jpg);
   background-size: cover;
   background-position: top;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
   position: relative; }
+  @media only screen and (max-width: 600px) {
+    .header {
+      height: 75vh;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%); } }
   .header__logo-box {
     position: absolute;
     top: 4rem;
@@ -679,6 +859,13 @@ body {
   margin: 0 auto; }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
+    @media only screen and (max-width: 900px) {
+      .row:not(:last-child) {
+        margin-bottom: 6rem; } }
+  @media only screen and (max-width: 900px) {
+    .row {
+      max-width: 50rem;
+      padding: 0 3rem; } }
   .row::after {
     content: "";
     display: table;
@@ -687,23 +874,40 @@ body {
     float: left; }
     .row [class^="col-"]:not(:last-child) {
       margin-right: 6rem; }
+      @media only screen and (max-width: 900px) {
+        .row [class^="col-"]:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 6rem; } }
+    @media only screen and (max-width: 900px) {
+      .row [class^="col-"] {
+        width: 100% !important; } }
   .row .col-1-of-2 {
     width: calc((100% - 6rem) / 2); }
   .row .col-1-of-3 {
     width: calc((100% - 2 * 6rem) / 3); }
+  .row .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem); }
   .row .col-1-of-4 {
     width: calc((100% - 3 * 6rem) / 4); }
-  .row .col-2-of-3 {
-    width: calc(((100% - 2 * 6rem) / 3) * 2 + 6rem); }
+  .row .col-2-of-4 {
+    width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
 
 .footer {
   background-color: #333333;
   padding: 10rem 0;
   font-size: 1.4rem;
   color: #f7f7f7; }
+  @media only screen and (max-width: 900px) {
+    .footer {
+      padding: 8rem 0; } }
   .footer__logo-box {
     text-align: center;
     margin-bottom: 8rem; }
+    @media only screen and (max-width: 900px) {
+      .footer__logo-box {
+        margin-bottom: 6rem; } }
   .footer__logo {
     width: 15rem;
     height: auto; }
@@ -711,6 +915,10 @@ body {
     border-top: 1px solid #777777;
     padding-top: 2rem;
     display: inline-block; }
+    @media only screen and (max-width: 900px) {
+      .footer__navigation {
+        width: 100%;
+        text-align: center; } }
   .footer__list {
     list-style: none; }
   .footer__item {
@@ -733,3 +941,7 @@ body {
     padding-top: 2rem;
     width: 80%;
     float: right; }
+    @media only screen and (max-width: 900px) {
+      .footer__info {
+        width: 100%;
+        float: none; } }
